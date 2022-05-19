@@ -31,7 +31,7 @@ class UpdateDestroyQualificationView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class= QualificationSerializer
     permission_classes = [IsAuthenticated]
 
-class BankAPI(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+class BankAPI(generics.ListCreateAPIView):
     serializer_class = BankSerializer
     queryset = Bank.objects.all()
     permission_classes = [IsAuthenticated]
@@ -41,7 +41,7 @@ class UpdateDestroyBankView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class= BankSerializer
     permission_classes = [IsAuthenticated]
 
-class PerDetAPI(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+class PerDetAPI(generics.ListCreateAPIView):
     serializer_class = PersonalDetailsSerializer
     queryset = PersonalDetails.objects.all()
     permission_classes = [IsAuthenticated]
